@@ -90,7 +90,7 @@ option_2_discount_young = option_2_discount_young %>%
 
 ###### Question 3 ########
 
-policy_data = read.csv("AgeLevelData.csv")
+policy_data = read.csv("Data/AgeLevelData.csv")
 
 is_young = function(age) {
   return(age >= 20 & age <= 25)
