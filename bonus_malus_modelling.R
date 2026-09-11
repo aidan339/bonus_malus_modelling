@@ -49,8 +49,8 @@ current_scheme_old = create_transition_matrix(lambda = lambda_old, nb_states = 5
 
 current_scheme_discount = data.frame(level = 0:4, discount = c(0.7, 0.8, 0.9, 1, 1.3))
 
-write.csv(round(current_scheme_young, 3), file = 'current_scheme_1_transition_young.csv')
-write.csv(round(current_scheme_old, 3), file = 'current_scheme_1_transition_old.csv')
+write.csv(round(current_scheme_young, 3), file = 'Results/current_scheme_1_transition_young.csv')
+write.csv(round(current_scheme_old, 3), file = 'Results/current_scheme_1_transition_old.csv')
 
 # Option 1 Transition Matrices and Discount 
 option_1_young = create_transition_matrix(lambda = lambda_young, nb_states = 3)
@@ -59,16 +59,16 @@ option_1_old = create_transition_matrix(lambda = lambda_old, nb_states = 3)
 option_1_discount = data.frame(level = 0:2, discount = c(0.8, 0.9, 1))
 
 
-write.csv(round(option_1_young, 3), file = 'scheme_1_transition_young.csv')
-write.csv(round(option_1_old, 3), file = 'scheme_1_transition_old.csv')
+write.csv(round(option_1_young, 3), file = 'Results/scheme_1_transition_young.csv')
+write.csv(round(option_1_old, 3), file = 'Results/scheme_1_transition_old.csv')
 
 
 # Option 2: Transition Matrices and Discount
 option_2_young = create_transition_matrix(lambda = lambda_young, nb_states = 7)
 option_2_old = create_transition_matrix(lambda = lambda_old, nb_states = 5)
 
-write.csv(round(option_2_young, 3), file = 'scheme_2_transition_young.csv')
-write.csv(round(option_2_old, 3), file = 'scheme_2_transition_old.csv')
+write.csv(round(option_2_young, 3), file = 'Results/scheme_2_transition_young.csv')
+write.csv(round(option_2_old, 3), file = 'Results/scheme_2_transition_old.csv')
 
 
 option_2_discount_young = data.frame(level = 0:6, discount = c(0.6, 0.7, 0.8, 0.9, 1, 1.3, 1.6))
@@ -200,7 +200,7 @@ distr = simulated_premiums_task_1 %>%
   summarise(min = min(x), q25 = quantile(x, 0.25), median = median(x), 
             mean = mean(x), q75 = quantile(x, 0.75), max = max(x), std_dev = sd(x))
 
-write.csv(distr, file = 'summary_stats_current_premium.csv')
+write.csv(distr, file = 'Results/summary_stats_current_premium.csv')
 
 
 ### ====================== Task 2 ====================== ###
@@ -468,4 +468,4 @@ long_run_profit_summary = as.data.frame(long_run_profits_long %>%
   )
 )
 
-write.csv(long_run_profit_summary, file = 'scheme_summary.csv')
+write.csv(long_run_profit_summary, file = 'Results/scheme_summary.csv')
